@@ -1,26 +1,24 @@
 import pygame as pg
 from vector import Vector
 from pygame.sprite import Sprite, Group
-from pygame import mixer
 
-class Mario(Sprite):
+class Level(Sprite):
 
   def __init__(self, game):
     super().__init__()
     self.game = game
     self.screen = game.screen
     self.settings = game.settings
-    self.image = pg.image.load('images/Mario_sprites.png').convert()
 
   def update(self):
     pass
 
-  def draw(self):
+  def draw(self): pass
     # image = self.image()
     # rect = image.get_rect()
     # rect.x, rect.y = self.rect.x, self.rect.y
     # self.screen.blit(image, rect)
-    self.screen.blit(self.image, (200, 400))
-    
-  # def get_sprite(self, x, y, w, h):
-    
+    # file = open('images/level_loc.txt', "r")
+    # print(file.read())
+    # self.screen.blit(file, (200, 550))
+    # file.close()

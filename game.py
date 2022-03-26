@@ -5,6 +5,7 @@ from time import sleep
 from settings import Settings
 from pygame import mixer
 from mario import Mario
+from create_level import Level
 
 
 class Game:
@@ -18,6 +19,7 @@ class Game:
         pg.display.set_caption("Space Mario")
         
         self.mario = Mario(game=self)
+        # self.level = Level(game=self)
         self.mixer = mixer.init()
          
     def restart(self):
@@ -31,6 +33,7 @@ class Game:
         #self.screen.fill(self.bg_color)
         level_1_bg = pg.image.load(f'images/level_bg.png').convert()
         self.screen.blit(level_1_bg, (0, 0))
+        # self.level.draw()
         self.mario.draw()
         pg.display.flip()
         
