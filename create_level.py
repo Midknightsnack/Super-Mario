@@ -13,12 +13,17 @@ class Level(Sprite):
   def update(self):
     pass
 
-  def draw(self): pass
-    # image = self.image()
-    # rect = image.get_rect()
-    # rect.x, rect.y = self.rect.x, self.rect.y
-    # self.screen.blit(image, rect)
-    # file = open('images/level_loc.txt', "r")
-    # print(file.read())
-    # self.screen.blit(file, (200, 550))
-    # file.close()
+  def draw(self): 
+    with open('images/level_loc.txt', "r") as file:
+      if 'X' in file.read:
+        ground = pg.image.load('images/Ground_Brick.png').convert()
+        self.screen.blit(ground, (200, 400))    # what is the positioning of the text file?
+      if 'B' in file.read:
+        ground = pg.image.load('images/Red_Brick.png').convert()
+        self.screen.blit(ground, (200, 400))
+      if '?' in file.read:
+        ground = pg.image.load('images/Item_Brick.png').convert()
+        self.screen.blit(ground, (200, 400))
+      if 'R' in file.read:
+        ground = pg.image.load('images/Stair_Brick.png').convert()
+        self.screen.blit(ground, (200, 400))   

@@ -19,7 +19,7 @@ class Game:
         pg.display.set_caption("Space Mario")
         
         self.mario = Mario(game=self)
-        # self.level = Level(game=self)
+        self.level = Level(game=self)
         self.mixer = mixer.init()
          
     def restart(self):
@@ -32,10 +32,17 @@ class Game:
     def draw(self):
         #self.screen.fill(self.bg_color)
         level_1_bg = pg.image.load(f'images/level_bg.png').convert()
+        level_1_bg = pg.transform.scale(level_1_bg, (10704, 717))
         x = 0
         while True:
             self.screen.blit(level_1_bg, (x, 0))
-            x -= 1
+            x -= 0.1
+            for n in range(75):
+                ground = pg.image.load('images/Ground_Brick.png')
+                ground = pg.transform.scale(ground, (25, 25))
+                self.screen.blit(ground, (25*n, 625))
+                self.screen.blit(ground, (25*n, 650))
+                self.screen.blit(ground, (25*n, 675))
             # self.level.draw()
             # self.mario.draw()
             pg.display.flip()
