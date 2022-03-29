@@ -32,10 +32,13 @@ class Game:
     def draw(self):
         #self.screen.fill(self.bg_color)
         level_1_bg = pg.image.load(f'images/level_bg.png').convert()
-        self.screen.blit(level_1_bg, (0, 0))
-        # self.level.draw()
-        self.mario.draw()
-        pg.display.flip()
+        x = 0
+        while True:
+            self.screen.blit(level_1_bg, (x, 0))
+            x -= 1
+            # self.level.draw()
+            # self.mario.draw()
+            pg.display.flip()
         
     def play(self):
         self.finished = False
