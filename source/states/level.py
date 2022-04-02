@@ -43,6 +43,8 @@ class Level(tools.State):
         f.close()
         
     def setup_background(self):
+        pg.mixer.music.load('sounds/SMB_theme.wav')
+        pg.mixer.music.play(-1)
         img_name = self.map_data[c.MAP_IMAGE]
         self.background = setup.GFX[img_name]
         self.bg_rect = self.background.get_rect()
