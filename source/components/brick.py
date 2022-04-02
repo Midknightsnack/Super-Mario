@@ -62,6 +62,8 @@ class Brick(stuff.Stuff):
     
     def update(self):
         if self.state == c.BUMPED:
+            breaksound = pg.mixer.Sound('sounds/break_block.wav')
+            breaksound.play()
             self.bumped()
     
     def bumped(self):
