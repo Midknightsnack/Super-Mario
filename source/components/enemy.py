@@ -122,6 +122,8 @@ class Enemy(pg.sprite.Sprite):
             self.y_vel += self.gravity
     
     def jumped_on(self):
+        killed = pg.mixer.Sound('sounds/kill_sound.wav')
+        killed.play()
         pass
 
     def death_jumping(self):
