@@ -506,6 +506,8 @@ class Player(pg.sprite.Sprite):
 
     def check_if_invincible(self):
         if self.invincible:
+            pg.mixer.music.load('sounds/star.wav')
+            pg.mixer.music.play(-1)
             if self.invincible_timer == 0:
                 self.invincible_timer = self.current_time
                 self.invincible_timer2 = self.current_time
